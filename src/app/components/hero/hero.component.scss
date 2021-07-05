@@ -1,0 +1,40 @@
+.hero {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 36vw;
+  min-height: 250px;
+  background: radial-gradient(
+    25% 50% at 100% 5%,
+    rgba(48, 55, 58, 0) 0%,
+    white 0%,
+    #30373a 100%
+  );
+}
+
+.title {
+  font-size: 7rem;
+  position: absolute;
+  font-weight: bold;
+  left: 8%;
+  top: 20%;
+  color: #2dcdc6;
+  .ascent {
+    color: #dc7811;
+  }
+}
+
+.hero-image {
+  display: block;
+  position: absolute;
+  height: 90%;
+  width: 60%;
+  right: 0;
+  top: 0;
+}
+
+@media (max-width: 600px) {
+  .hero-image {
+    display: none;
+  }
+}

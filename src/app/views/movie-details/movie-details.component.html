@@ -1,0 +1,74 @@
+<div
+  class="fullheight poster"
+  [ngStyle]="{ 'background-image': 'url(' + movieBackground + ')' }"
+>
+  <div>
+    <button
+      class="return-button"
+      (click)="returnToHome()"
+      aria-label="Return to Home"
+    >
+      <mat-icon class="return-icon" aria-hidden="false">arrow_back</mat-icon>
+    </button>
+    <div class="content">
+      <div *ngIf="selectedMovie !== undefined">
+        <div class="card">
+          <img [src]="moviePoster" alt="movie poster" class="card-image" />
+          <div class="card-content">
+            <div class="mat-display-1 title">
+              {{ selectedMovie.title }} ({{
+                selectedMovie.release_date | slice: 0:4
+              }})
+            </div>
+            <div class="movie-genres">
+              <mat-chip-list aria-label="Movies Genres">
+                <mat-chip
+                  *ngFor="let genre of selectedMovie.genres; let even = even"
+                  [ngClass]="even == true ? 'secondary-chip' : 'primary-chip'"
+                >
+                  {{ genre.name }}
+                </mat-chip>
+              </mat-chip-list>
+            </div>
+            <p class="movie-overview">{{ selectedMovie.overview }}</p>
+            <div class="movie-data">
+              <mat-grid-list cols="2" rowHeight="2:1">
+                <mat-grid-tile>
+                  <div class="movie-data-section">
+                    <h2 class="section-title">Runtime</h2>
+                    <p>{{ selectedMovie.runtime }} Min</p>
+                  </div>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                  <div class="movie-data-section">
+                    <h2 class="section-title">Revenue</h2>
+                    <p>{{ selectedMovie.revenue | currency }}</p>
+                  </div>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                  <div class="movie-data-section">
+                    <h2 class="section-title">Rating</h2>
+                    <p>{{ selectedMovie.vote_average }} / 10</p>
+                  </div>
+                </mat-grid-tile>
+
+                <mat-grid-tile>
+                  <div class="movie-data-section">
+                    <h2 class="section-title">IMDB</h2>
+                    <a
+                      href="{{
+                        'https://www.imdb.com/title/' + selectedMovie.imdb_id
+                      }}"
+                      target="_blank"
+                      >View movie in IMDB</a
+                    >
+                  </div>
+                </mat-grid-tile>
+              </mat-grid-list>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,102 @@
+.content {
+  margin: 0 auto;
+  padding: 0 1rem;
+  max-width: 980px;
+}
+
+.poster {
+  width: auto;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.return-button {
+  background: transparent;
+  border: none;
+}
+
+.return-icon {
+  height: auto;
+  font-size: 3rem;
+  position: absolute;
+  top: 3rem;
+  left: 3rem;
+  color: white;
+  cursor: pointer;
+}
+
+.card {
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: flex-start;
+  max-width: 800px;
+  max-height: 80%;
+  .card-image {
+    height: 100%;
+    width: 50%;
+  }
+  .card-content {
+    padding: 1rem;
+    position: relative;
+  }
+
+  .title {
+    margin: 0;
+  }
+  .movie-genres {
+    margin: 1rem 0;
+    .primary-chip {
+      font-weight: bold;
+      background: #2dcdc6;
+    }
+    .secondary-chip {
+      font-weight: bold;
+      background: #dc7811;
+    }
+  }
+  .movie-overview {
+    font-size: 1.1rem;
+    text-align: justify;
+  }
+  .movie-data {
+    bottom: 3rem;
+    position: absolute;
+    width: 90%;
+    .movie-data-section {
+      text-align: center;
+      .section-title {
+        margin: 0;
+        font-weight: bold;
+      }
+      p {
+        font-size: 1.2rem;
+      }
+      a {
+        color: #2dcdc6;
+        text-decoration: none;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    text-align: center;
+    display: block;
+    .movie-genres {
+      display: flex;
+      justify-content: center;
+    }
+    .movie-data {
+      position: inherit;
+      bottom: 0;
+    }
+  }
+}
